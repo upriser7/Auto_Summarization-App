@@ -1,5 +1,0 @@
-1 - Every module that returns points by the particular catigory it made for.. returns those points in the
-form of a list of two tuples (# of sentence, no of points)
-
-2 - Any function that might be used in more than one module and it is sort of a general function put it in
-the tools module and import form there
