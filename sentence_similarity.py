@@ -8,19 +8,19 @@ import re
 from collections import Counter
 
 def similarity_by_sequence_matching(s1:str,s2:str):
-    ''''''
+    '''returns a tuple of which the first element is the similarity of sequence matching'''
     senquence_matcher = SequenceMatcher()
     senquence_matcher.set_seq1(s1)
     senquence_matcher.set_seq2(s2)
     return round(senquence_matcher.ratio(),2)
 
 def sentiment_analysis_of_sentence(s:str):
-    ''''''
+    '''Uses the stock sentiment analysis in Textblob'''
     text = TextBlob(s)
     return text.sentiment[0],text.sentiment[1]
 
 def cosine_similarity_score(s1:str, s2:str):
-    ''''''
+    '''finds the cosine similarity on the 2 sentences'''
 
     def text_to_vector(s: str):
         word = re.compile(r'\w+')
@@ -39,6 +39,7 @@ def cosine_similarity_score(s1:str, s2:str):
     return round(float(nom)/denom,2) if denom else 0.0
 
 def similarity_quotient(s1:str,s2:str):
+    '''Combines everything in this module together'''
     sequence_match = similarity_by_sequence_matching(s1,s2)
     cosine_match = cosine_similarity_score(s1,s2)
     sentiment_s1 = sentiment_analysis_of_sentence(s1)
