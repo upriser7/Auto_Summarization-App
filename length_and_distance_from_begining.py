@@ -1,3 +1,5 @@
+# Processes length and distance and redundancy parameters of a sentence stored in Textblob for summurization
+
 from textblob import TextBlob
 from project_tools import *
 
